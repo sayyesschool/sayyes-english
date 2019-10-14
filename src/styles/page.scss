@@ -1,52 +1,4 @@
-$desktop-size: 1024px;
-$tablet-size: 768px;
-$mobile-size: 425px;
-
-@mixin for-mobile() {
-    @media (max-width: $mobile-size) {
-        @content;
-    }
-}
-
-@mixin for-tablet() {
-    @media (min-width: $tablet-size + 1) and (max-width: $desktop-size - 1) {
-        @content;
-    }
-}
-
-@mixin for-desktop() {
-    @media (min-width: $desktop-size) {
-        @content;
-    }
-}
-
 .page {
-    &.target-woman {
-        #header {
-            background-image: url('../img/woman-hero.jpg');
-            background-position: center left;
-        }
-        
-        #signup {
-            .background-image {
-                background-image: url('../img/woman-cant-speak.jpg');
-            }
-        }
-    }
-
-    &.target-man {
-        #header {
-            background-image: url('../img/man-hero.jpg');
-            background-position: center right;
-        }
-    
-        #signup {
-            .background-image {
-                background-image: url('../img/man-cant-speak.jpg');
-            }
-        }
-    }
-
     @include for-mobile() {
         padding-bottom: 60px;
     }
@@ -59,10 +11,16 @@ $mobile-size: 425px;
 #header {
     position: relative;
     text-align: center;
-    background-image: url('../img/woman-hero.jpg');
-    background-position: left center;
+    background-image: url('../img/hero-mobile.jpg');
+    background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;;
     z-index: 1;
+
+    @include for-desktop {
+        background-image: url('../img/hero-desktop.jpg');
+        background-position: center;
+    }
 
     &::before {
         content: '';
@@ -92,8 +50,12 @@ $mobile-size: 425px;
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            max-width: 1024px;
-            padding: 1rem 2rem;
+            padding: 1rem;
+
+            @mixin for-desktop() {
+                max-width: 1024px;
+                padding: 1rem 2rem;
+            }
         }
 
         img {
@@ -130,26 +92,27 @@ $mobile-size: 425px;
     }
 
     .hero-body {
-        padding: 1rem 1rem 5rem;
+        padding: 1rem;
 
         .title {
             font-weight: normal;
-            font-size: 1rem;
-            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            margin-top: 12rem;
             text-transform: uppercase;
         }
 
         .subtitle {
             font-size: 2rem;
             line-height: 1.1;
+            margin: 0;
         }
 
-        @media (min-width: $desktop-size) {
-            padding: 0rem 1rem 1rem;
-
+        @include for-desktop() {
             .title {
                 font-size: 1.8rem;
-                margin-bottom: 3rem;
+                margin-top: 18rem;
+                margin-bottom: 2rem;
             }
 
             .subtitle {
@@ -161,7 +124,7 @@ $mobile-size: 425px;
     .hero-foot {
         margin-top: auto;
         width: 100%;
-        padding: 8rem 1rem 1rem;
+        padding: 1rem 1rem 2rem;
         background: linear-gradient(to top,
             rgba(0, 0, 0, .7) 0%,
             rgba(0, 0, 0, 0) 100%
@@ -178,12 +141,8 @@ $mobile-size: 425px;
             }
         }
 
-        .button {
-            margin-top: 1rem;
-        }
-
-        @media (min-width: $desktop-size) {
-            padding: 12rem 1rem 2rem;
+        @include for-desktop() {
+            padding: 1rem 1rem 2rem;
 
             .typography {
                 font-size: 2rem;
@@ -193,38 +152,74 @@ $mobile-size: 425px;
 }
 
 #signup {
-    @include for-desktop() {
-        padding-left: 0;
-        padding-right: 0;
-    }
 
-    .media-list {
-        margin-bottom: 0;
-    }
 }
 
 #lesson {
-    padding-top: 0;
     background-color: #ede9fb;
 
-    .background-image {
-        height: 226px;
+    .container {
         display: flex;
+        flex-wrap: wrap;
+        max-width: 720px;
+        margin: auto;
+    }
+
+    .title {
+        width: 100%;
+    }
+
+    .background-image {
+        display: flex;
+        width: 100%;
         flex-direction: column;
         background-size: cover;
         background-position: center;
         background-image: url('../img/lesson.jpg');
         background-repeat: no-repeat;
 
-        @include for-mobile() {
-            margin-left: -1rem;
-            margin-right: -1rem;
+        @include for-mobile {
+            height: 226px;
+        }
+
+        @include for-tablet {
+            height: 300px;
+        }
+
+
+        @include for-desktop {
+            height: 365px;
         }
     }
 
     @include for-mobile() {
-        .no-top-padding {
-            padding-top: 0;
+        .title {
+            text-align: center;
+            order: 1;
+        }
+
+        .background-image {
+            margin-bottom: 2rem;
+        }
+
+        .media-list {
+            order: 2;
+        }
+    }
+
+    @include for-tablet {
+        .title {
+            text-align: center;
+        }
+    }
+}
+
+#details {
+    .media-list {
+        .media-left {
+            .checkmark {
+                font-size: 1.5rem;
+            }
         }
     }
 }
@@ -336,12 +331,8 @@ $mobile-size: 425px;
         margin-right: auto;
     }
 
-    #timer {
-        margin-top: 2rem;
-
-        .tag {
-            margin-top: 1rem;
-        }
+    label.checkbox {
+        font-size: .8rem;
     }
 }
 
@@ -350,9 +341,9 @@ $mobile-size: 425px;
     color: white;
     text-align: center;
 
-    .title,
-    .subtitle {
+    .title {
         color: white;
+        font-weight: normal;
     }
 
     .button {

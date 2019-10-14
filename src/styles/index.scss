@@ -1,7 +1,12 @@
 $primary: #6c167b;
 $danger: #f5593d;
 
+$desktop-size: 1024px;
+$tablet-size: 768px;
+$mobile-size: 425px;
+
 @import 'bulma/bulma.sass';
+@import './mixins.scss';
 @import './slick.scss';
 @import './icons.scss';
 @import './base.scss';

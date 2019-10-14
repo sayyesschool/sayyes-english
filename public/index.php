@@ -52,37 +52,31 @@ $utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : null;
             </div>
 
             <div class="hero-foot">
-                <p class="typography">Запишитесь на урок и получите в подарок инструкцию<br>«Как быстро начать понимать носителей языка»</p>
-
-                <a href="#form" class="button is-danger is-fullwidth call-to-action">Записаться на урок и получить подарок</a>
+                <a href="#form" class="button is-danger is-fullwidth call-to-action">Записаться на урок</a>
             </div>
         </header>
 
         <section id="signup" class="section has-text-centered">
-            <h2 class="title">Вам стоит посетить наш урок, если вы:</h2>
+            <h2 class="title">Вам стоит посетить наш урок, если:</h2>
 
             <div class="media-list">
                 <?php
                     $items = [
                         [
                             'image' => 'grimacing-face.png',
-                            'text' => 'Учили английский в школе и институте, но ваши знания можно описать как «London is the capital of Great Britain».'
+                            'text' => 'Ваши знания ограничиваются фразой "London is the capital of Great Britain".'
                         ],
                         [
                             'image' => 'zipper-mouth-face.png',
-                            'text' => 'В путешествиях хотите перестать «объясняться на пальцах» и прятаться за спиной англоговорящего друга.'
+                            'text' => 'Вы хотите перестать "объясняться на пальцах" в путешествиях.'
                         ],
                         [
                             'image' => 'shocked-face-with-exploding-head.png',
-                            'text' => 'Можете сказать пару фраз на английском, но как только заговаривает иностранец, вы ничего не понимаете.'
+                            'text' => 'Можете сказать пару фраз на английском, но плохо понимаете беглую речь на слух.'
                         ],
                         [
                             'image' => 'unamused-face.png',
-                            'text' => 'Поставили себе цель заполучить высокооплачиваемую должность, но пункта «Свободный английский» в вашем резюме пока нет.'
-                        ],
-                        [
-                            'image' => 'nerd-face.png',
-                            'text' => 'Если вы учите язык годами, но так и не говорите СВОБОДНО – вам просто необходимо посетить наш открытый урок!'
+                            'text' => 'Ваша цель – высокооплачиваемая работа, но в резюме нет пункта «Свободный английский»'
                         ]
                     ];
                 ?>
@@ -99,61 +93,59 @@ $utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : null;
                     </div>
                 <?php endforeach; ?>
             </div>
+
+            <p class="lead">Если вы учите язык годами, но так и не говорите СВОБОДНО – вам просто необходимо посетить наш открытый урок!</p>
         </section>
 
         <section id="lesson" class="section">
-            <div class="columns">
-                <div class="column is-6 no-top-padding">
-                    <div class="background-image"></div>
-                </div>
+            <div class="container">
+                <h2 class="title section-title">Что вас ждет на уроке?</h2>
 
-                <div class="column is-6">
-                    <h2 class="title section-title">Что вас ждет на уроке?</h2>
+                <div class="background-image"></div>
 
-                    <div class="media-list">
-                        <?php
-                            $items = [
-                                [
-                                    'image' => 'speaking-head-in-silhouette.png',
-                                    'text' => 'Вы поймете, почему вы до сих пор не заговорили на английском.'
-                                ],
-                                [
-                                    'image' => 'white-up-pointing-index.png',
-                                    'text' => 'Узнаете 5 секретов изучения языка, без которых вы НЕ заговорите.'
-                                ],
-                                [
-                                    'image' => 'flag-for-united-kingdom.png',
-                                    'text' => 'Выясните, как начать понимать носителей языка в два раза быстрее.'
-                                ],
-                                [
-                                    'image' => 'memo.png',
-                                    'text' => 'Узнаете, почему учить десятки отдельных слов – пустая трата времени.'
-                                ],
-                                [
-                                    'image' => 'female-teacher.png',
-                                    'text' => 'Познакомитесь с методом Fluency Drill, который поможет вам строить предложения «на автомате».'
-                                ]
-                            ];
-                        ?>
+                <div class="media-list">
+                    <?php
+                        $items = [
+                            [
+                                'image' => 'speaking-head-in-silhouette.png',
+                                'text' => 'Поймете, почему вы до сих пор не заговорили на английском.'
+                            ],
+                            [
+                                'image' => 'white-up-pointing-index.png',
+                                'text' => 'Узнаете 5 секретов изучения языка, без которых вы НЕ заговорите.'
+                            ],
+                            [
+                                'image' => 'flag-for-united-kingdom.png',
+                                'text' => 'Выясните, как начать понимать носителей языка в два раза быстрее.'
+                            ],
+                            [
+                                'image' => 'memo.png',
+                                'text' => 'Узнаете, почему учить десятки отдельных слов – пустая трата времени.'
+                            ],
+                            [
+                                'image' => 'female-teacher.png',
+                                'text' => 'Познакомитесь с методом Fluency Drill, который поможет вам строить предложения «на автомате».'
+                            ]
+                        ];
+                    ?>
 
-                        <?php foreach($items as $item): ?>
-                            <div class="media">
-                                <div class="media-left">
-                                    <img class="image" src="./img/emoji/<?= $item['image'] ?>">
-                                </div>
-
-                                <div class="media-content">
-                                    <p><?= $item['text'] ?></p>
-                                </div>
+                    <?php foreach($items as $item): ?>
+                        <div class="media">
+                            <div class="media-left">
+                                <img class="image" src="./img/emoji/<?= $item['image'] ?>">
                             </div>
-                        <?php endforeach; ?>
-                    </div>
+
+                            <div class="media-content">
+                                <p><?= $item['text'] ?></p>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </section>
 
         <section id="details" class="section section-dark">
-            <h2 class="title">Также на уроке, вы:</h2>
+            <h2 class="title">За два часа урока, вы:</h2>
 
             <div class="media-list">
                 <?php
@@ -180,7 +172,7 @@ $utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : null;
                 <?php foreach($items as $item): ?>
                     <div class="media">
                         <div class="media-left">
-                            <img class="image" src="./img/emoji/white-heavy-check-mark.png">
+                            <span class="checkmark">&check;</span>
                         </div>
 
                         <div class="media-content">
@@ -358,7 +350,7 @@ $utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : null;
                 </div>
             </div>
 
-            <h3 class="title">Стоимость:</h3>
+            <!--<h3 class="title">Стоимость:</h3>
 
             <div class="media-list">
                 <div class="media">
@@ -390,13 +382,13 @@ $utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : null;
                         <p>Всем зарегистрировавшимся на урок мы подарим видео-инструкцию от тренера по произношению.</p>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <a href="#form" class="button is-danger is-fullwidth call-to-action">Записаться на бесплатный урок</a>
         </section>
 
         <section id="form" class="section">
-            <h2 class="title">Регистрация на бесплатный урок</h2>
+            <h2 class="title">Регистрация на открытый урок</h2>
 
             <p class="subtitle">Оставьте заявку до конца дня <?= date('d.m') ?>, и мы бесплатно определим ваш уровень английского языка.</p>
 
@@ -431,12 +423,6 @@ $utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : null;
 
                 <div class="field">
                     <div class="control">
-                        <input class="input is-medium" type="email" name="email" placeholder="Email" required>
-                    </div>
-                </div>
-
-                <div class="field">
-                    <div class="control">
                         <label class="checkbox">
                             <input type="checkbox" checked required>
                             Я согласен на обработку своих персональных данных
@@ -453,9 +439,9 @@ $utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : null;
         </section>
 
         <footer id="footer" class="footer section">
-            <h2 class="title">Остались вопросы?</h2>
+            <h2 class="title">Хотите узнать больше об открытом уроке?</h2>
 
-            <p class="subtitle">Если вы хотите узнать более полную информацию о нас, просто позвоните нам!</p>
+            <p>Позвоните нам</p>
 
             <a class="button is-primary is-outlined is-inverted" href="tel:74996505347">
                 <span class="icon">
@@ -476,7 +462,7 @@ $utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : null;
             <div><a href="https://sayes.ru/politika-konfidentsialnosti/">Политика конфиденциальности</a></div>
         </footer>
         
-        <!-- <a class="button is-danger is-fullwidth call-to-action call-to-action--fixed" href="#form">Записаться на урок и получить подарок</a> -->
+        <!-- <a class="button is-danger is-fullwidth call-to-action call-to-action--fixed" href="#form">Записаться на урок</a> -->
 
         <script src="./js/free-lesson.js"></script>
         <script src="./js/crm.js"></script>
@@ -487,15 +473,12 @@ $utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : null;
             $('input[type=tel]').mask('+7 (999) 999-9999');
 
             document.querySelector('form').addEventListener('submit', function(event) {
-                yaCounter50571868.reachGoal('sign_upland');
-
                 fbq('track', 'CompleteRegistration');
                 
                 crm.addStudyRequest({
-                    type: 'Заявка с мобильного лэнда',
+                    type: 'Заявка на открытый урок с мобильного лэнда',
                     name: this.elements.name.value,
-                    phone: this.elements.phone.value,
-                    email: this.elements.email.value
+                    phone: this.elements.phone.value
                 });
             });
 
