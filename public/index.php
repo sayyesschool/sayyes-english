@@ -35,7 +35,7 @@ $utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : null;
                     <div class="buttons">
                         <a class="button phone is-text" href="tel:74996505347">+7 499 650-53-47</a>
 
-                        <a class="button whatsapp is-white is-outlined" href="https://wa.me/79250916416" target="_blank">
+                        <a class="button whatsapp-button is-white is-outlined" href="https://wa.me/79250916416" target="_blank">
                             <span class="icon">
                                 <i class="fab fa-whatsapp"></i>
                             </span>
@@ -452,7 +452,7 @@ $utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : null;
 
             <br>или напишите нам<br>
 
-            <a class="button is-primary is-outlined is-inverted" href="https://wa.me/79250916416" target="_blank">
+            <a class="button whatsapp-button is-primary is-outlined is-inverted" href="https://wa.me/79250916416" target="_blank">
                 <span class="icon">
                     <i class="fab fa-whatsapp"></i>
                 </span>
@@ -468,12 +468,22 @@ $utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : null;
         <script src="./js/crm.js"></script>
 
         <script>
+            var formElement = document.querySelector('#form');
+
             fbq('track', 'InitiateCheckout');
 
             $('input[type=tel]').mask('+7 (999) 999-9999');
 
+            $('.call-to-action').on('click', function(event) {
+                event.preventDefault();
+
+                formElement.scrollIntoView({ behavior: 'smooth' });
+            });
+
             document.querySelector('form').addEventListener('submit', function(event) {
                 fbq('track', 'CompleteRegistration');
+                ym(YANDEX_METRIKA_COUNTER, 'reachGoal', 'zayavka');
+                gtag('event', 'click', { event_category: 'zayavka' });
                 
                 crm.addStudyRequest({
                     type: 'Заявка на открытый урок с мобильного лэнда',
@@ -482,12 +492,11 @@ $utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : null;
                 });
             });
 
-            var formElement = document.querySelector('#form');
-
-            $('.call-to-action').on('click', function (event) {
-                event.preventDefault();
-
-                formElement.scrollIntoView({ behavior: 'smooth' });
+            $('.whatsapp-button').click(function() {
+                ym(YANDEX_METRIKA_COUNTER, 'reachGoal', 'click');
+                gtag('event', 'click', { event_category: 'click' });
+                
+                return true;
             });
 
             $('#gallery .carousel-inner').slick({
