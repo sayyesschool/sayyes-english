@@ -21,9 +21,9 @@ $utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : null;
         <link rel="icon" href="./img/favicon-192x192.png" sizes="192x192">
         <link rel="stylesheet" href="./css/index.css">
 
-        <?php include './includes/facebook-pixel.php' ?>
         <?php include './includes/yandex-metrika.php' ?>
         <?php include './includes/google-analytics.php' ?>
+        <?php include './includes/facebook-pixel.php' ?>
     </head>
 
     <body class="page<?= isset($target) ? ' target-'.$target : '' ?>">
@@ -463,14 +463,12 @@ $utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : null;
         </footer>
         
         <!-- <a class="button is-danger is-fullwidth call-to-action call-to-action--fixed" href="#form">Записаться на урок</a> -->
-
-        <script src="./js/free-lesson.js"></script>
-        <script src="./js/crm.js"></script>
+        
+        <script src="./js/vendor.js"></script>
+        <script src="https://static.sayes.ru/js/crm.js"></script>
 
         <script>
             var formElement = document.querySelector('#form');
-
-            fbq('track', 'InitiateCheckout');
 
             $('input[type=tel]').mask('+7 (999) 999-9999');
 
@@ -481,9 +479,9 @@ $utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : null;
             });
 
             document.querySelector('form').addEventListener('submit', function(event) {
-                fbq('track', 'CompleteRegistration');
                 ym(YANDEX_METRIKA_COUNTER, 'reachGoal', 'zayavka');
                 gtag('event', 'click', { event_category: 'zayavka' });
+                fbq('track', 'Lead');
                 
                 crm.addStudyRequest({
                     type: 'Заявка на открытый урок с мобильного лэнда',
@@ -495,6 +493,7 @@ $utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : null;
             $('.whatsapp-button').click(function() {
                 ym(YANDEX_METRIKA_COUNTER, 'reachGoal', 'click');
                 gtag('event', 'click', { event_category: 'click' });
+                fbq('track', 'InitiateCheckout');
                 
                 return true;
             });
