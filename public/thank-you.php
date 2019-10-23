@@ -17,16 +17,14 @@
         <?php include './includes/google-analytics.php' ?>
     </head>
     
-    <body>
-        <main id="thank-you" class="hero">
-            <div class="hero-body">
-                <div class="container">
-                    <h1 class="title">Спасибо за заявку!</h1>
+    <body id="thank-you">
+        <header>
+            <h1 class="title">Спасибо за заявку!</h1>
 
-                    <p class="subtitle">Мы перезвоним Вам в ближайшее время, а пока что предлагаем подписаться на наш паблик в <a href="https://www.instagram.com/sayyes2english">Instagram</a> и начать учить живой английский с нашими преподавателями!</p>
-                </div>
-            </div>
+            <p class="subtitle">Мы перезвоним Вам в ближайшее время, а пока что предлагаем подписаться на наш паблик в <a href="https://www.instagram.com/sayyes2english">Instagram</a> и начать учить живой английский с нашими преподавателями!</p>
+        </header>
 
+        <main>
             <iframe class="card" src="https://www.instagram.com/p/Btga3-IAHWT/embed/captioned/?cr=1&amp;v=12&amp;wp=500&amp;rd=https%3A%2F%2Fsayes.ru&amp;rp=%2Fthank-you%2F#%7B%22ci%22%3A0%2C%22os%22%3A4979.500000001281%7D" allowtransparency="true" allowfullscreen="true" frameborder="0" scrolling="no"></iframe>
         </main>
     </body>
