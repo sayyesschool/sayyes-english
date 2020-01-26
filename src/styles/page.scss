@@ -216,9 +216,14 @@
 
 #details {
     .media-list {
-        .media-left {
-            .checkmark {
-                font-size: 1.5rem;
+        .media {
+            justify-content: center;
+            align-items: center;
+
+            .media-left {
+                .checkmark {
+                    font-size: 1.5rem;
+                }
             }
         }
     }
