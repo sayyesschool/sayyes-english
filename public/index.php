@@ -119,14 +119,6 @@ $utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : null;
                                     'text' => 'Узнаете 5 секретов изучения языка, без которых вы НЕ заговорите.'
                                 ],
                                 [
-                                    'image' => 'flag-for-united-kingdom.png',
-                                    'text' => 'Выясните, как начать понимать носителей языка в два раза быстрее.'
-                                ],
-                                [
-                                    'image' => 'memo.png',
-                                    'text' => 'Узнаете, почему учить десятки отдельных слов – пустая трата времени.'
-                                ],
-                                [
                                     'image' => 'female-teacher.png',
                                     'text' => 'Познакомитесь с методом Fluency Drill, который поможет вам строить предложения «на автомате».'
                                 ]
@@ -155,20 +147,24 @@ $utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : null;
                     <?php
                         $items = [
                             [
-                                'image' => 'speech-balloon.png',
-                                'text' => 'Запомните выражения на тему «Свободное время»'
+                                'image' => 'white-heavy-check-mark.png',
+                                'text' => 'Определите свой уровень и проблемные места'
                             ],
                             [
-                                'image' => 'speaking-head-in-silhouette.png',
-                                'text' => 'Научитесь выражать на английском свои планы на будущее'
+                                'image' => 'information-desk-person.png',
+                                'text' => 'Посетите пробный урок в группе вашего уровня'
                             ],
                             [
-                                'image' => 'speak-no-evil-monkey.png',
-                                'text' => 'Сразу будете говорить на английском с напарником'
+                                'image' => 'flag-for-united-kingdom.png',
+                                'text' => 'Узнаете, как наша методика поможет вам заговорить'
                             ],
                             [
-                                'image' => 'speak-no-evil-monkey.png',
-                                'text' => 'Поймете, что, следуя нашим правилам, вы точно ЗАГОВОРИТЕ НА АНГЛИЙСКОМ СВОБОДНО'
+                                'image' => 'female-teacher.png',
+                                'text' => 'Познакомитесь с вашим потенциальным преподавателем'
+                            ],
+                            [
+                                'image' => 'house-building.png',
+                                'text' => 'Узнаете, почему нашу школу называют «вторым домом»'
                             ]
                         ];
                     ?>
