@@ -98,12 +98,12 @@ $utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : null;
                     <?php endforeach; ?>
                 </div>
 
-                <p class="lead">Если вы учите язык годами, но так и не говорите СВОБОДНО – вам просто необходимо посетить наш открытый урок!</p>
+                <p class="lead">Если вы учите язык годами, но так и не говорите СВОБОДНО – вам просто необходимо посетить наш пробный урок!</p>
             </section>
 
             <section id="lesson" class="section">
                 <div class="container">
-                    <h2 class="title section-title">Что вас ждет на уроке?</h2>
+                    <h2 class="title section-title">Что вас ждет на пробном уроке?</h2>
 
                     <div class="background-image"></div>
 
@@ -221,7 +221,7 @@ $utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : null;
                     <?php endforeach; ?>
                 </div>
 
-                <p class="lead has-text-centered">Дважды становились победителями Премии <strong>«Эксперт Года»</strong> рейтинга курсов Schoolrate:</p>
+                <p class="lead has-text-centered">Трижды становились победителями Премии <strong>«Эксперт Года»</strong> рейтинга курсов Schoolrate:</p>
 
                 <div class="media-list">
                     <?php
@@ -233,6 +233,14 @@ $utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : null;
                             [
                                 'image' => 'trophy.png',
                                 'text' => 'За <strong>лучшие языковые мероприятия</strong> для студентов (2018 г.)'
+                            ],
+                            [
+                                'image' => 'trophy.png',
+                                'text' => '<strong>Методика года</strong> за метод «Английский до автоматизма» (2019 г.)'
+                            ],
+                            [
+                                'image' => 'trophy.png',
+                                'text' => '<strong>WEB–доверие</strong> за самую лояльную публику в Интернет (2019 г.)'
                             ]
                         ];
                     ?>
@@ -388,7 +396,7 @@ $utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : null;
             </section>
 
             <section id="form" class="section">
-                <h2 class="title">Регистрация на открытый урок</h2>
+                <h2 class="title">Регистрация на пробный урок</h2>
 
                 <p class="subtitle">Оставьте заявку до конца дня <?= date('d.m') ?>, и мы бесплатно определим ваш уровень английского языка.</p>
 
@@ -440,7 +448,7 @@ $utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : null;
         </main>
 
         <footer id="footer" class="footer section">
-            <h2 class="title">Хотите узнать больше об открытом уроке?</h2>
+            <h2 class="title">Хотите узнать больше о пробном уроке?</h2>
 
             <p>Позвоните нам</p>
 
@@ -485,7 +493,7 @@ $utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : null;
                 fbq('track', 'Lead');
                 
                 crm.addStudyRequest({
-                    type: 'Заявка на открытый урок с мобильного лэнда',
+                    type: 'Заявка на пробный урок с мобильного лэнда',
                     name: this.elements.name.value,
                     phone: this.elements.phone.value
                 });
