@@ -1,15 +1,16 @@
 {
-  "name": "sayes-english",
+  "name": "sayes-emglish",
   "version": "1.0.0",
   "private": true,
   "main": "gulpfile.js",
   "scripts": {
-    "start": "gulp"
+    "server": "php -S localhost:8000",
+    "sass": "gulp"
   },
   "devDependencies": {
-    "bulma": "^0.7.4",
-    "gulp": "^4.0.0",
-    "gulp-sass": "^4.0.2",
-    "node-sass": "^4.13.0"
+    "bulma": "^0.8.2",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^4.14.1"
   }
 }
