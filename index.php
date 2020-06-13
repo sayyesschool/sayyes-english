@@ -1,10 +1,3 @@
-<?php
-$utm_source = isset($_GET['utm_source']) ? $_GET['utm_source'] : null;
-$utm_medium = isset($_GET['utm_medium']) ? $_GET['utm_medium'] : null;
-$utm_campaign = isset($_GET['utm_campaign']) ? $_GET['utm_campaign'] : null;
-$utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : null;
-?>
-
 <!DOCTYPE html>
 <html lang="ru">
     <head>
@@ -567,23 +560,7 @@ $utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : null;
                     
                     <div class="columns">
                         <div class="column">
-                            <form method="post" action="request.php">
-                                <?php if (isset($utm_source)): ?>
-                                    <input type="hidden" name="utm_source" value="<?= $utm_source ?>">
-                                <?php endif; ?>
-
-                                <?php if (isset($utm_medium)): ?>
-                                    <input type="hidden" name="utm_medium" value="<?= $utm_medium ?>">
-                                <?php endif; ?>
-
-                                <?php if (isset($utm_campaign)): ?>
-                                    <input type="hidden" name="utm_campaign" value="<?= $utm_campaign ?>">
-                                <?php endif; ?>
-
-                                <?php if (isset($utm_content)): ?>
-                                    <input type="hidden" name="utm_content" value="<?= $utm_content ?>">
-                                <?php endif; ?>
-
+                            <form method="post" action="https://api.sayes.ru/request.php">
                                 <div class="field">
                                     <div class="control">
                                         <input class="input is-medium" type="text" name="name" placeholder="Имя" required>
