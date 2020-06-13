@@ -681,29 +681,23 @@ $utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : null;
             document.querySelector('form').addEventListener('submit', function(event) {
                 event.preventDefault();
 
+                var data = {
+                    type: 'Заявка на пробный урок с мобильного лэнда',
+                    name: this.elements.name.value,
+                    phone: this.elements.phone.value
+                };
+
                 ym(YANDEX_METRIKA_COUNTER, 'reachGoal', 'zayavka');
                 gtag('event', 'click', { event_category: 'zayavka' });
                 fbq('track', 'Lead_zoom');
                 
-                crm.addStudyRequest({
-                    type: 'Заявка на пробный урок',
-                    name: this.elements.name.value,
-                    phone: this.elements.phone.value
-                });
+                crm.addStudyRequest(data);
                 
                 $.post({
-                    url: 'https://api.sayes.ru/request.php',
-                    data: JSON.stringify({
-                        name: this.elements.name.value,
-                        phone: this.elements.phone.value,
-                        subject: 'Заявка на пробный урок с мобильного лэнда (english.sayes.ru)',
-                        utm_source: this.elements.utm_source && this.elements.utm_source.value,
-                        utm_medium: this.elements.utm_medium && this.elements.utm_medium.value,
-                        utm_campaign: this.elements.utm_campaign && this.elements.utm_campaign.value,
-                        utm_content: this.elements.utm_content && this.elements.utm_content.value
-                    }),
-                    contentType: 'application/json'
-                }).done(function(data) {
+                    url: 'https://api.sayes.ru/request.php' + location.search,
+                    data: data,
+                    contentType: 'application/x-www-form-urlencoded'
+                }).done(function() {
                     dialogElement.classList.add('is-active');
                     formElement.reset();
                 });
