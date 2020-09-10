@@ -666,7 +666,7 @@
 
                 ym(YANDEX_METRIKA_COUNTER, 'reachGoal', 'zayavka');
                 gtag('event', 'click', { event_category: 'zayavka' });
-                fbq('track', 'Lead_zoom');
+                fbq('track', 'Lead');
                 
                 crm.addStudyRequest(data);
                 
