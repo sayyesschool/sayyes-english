@@ -45,7 +45,7 @@
             </div>
 
             <div class="hero-body">
-                <h1 class="typography title">Бесплатный урок английского в Москве</h1>
+                <h1 class="typography title">Бесплатный пробный урок английского в Москве</h1>
 
                 <p class="typography subtitle">Начните говорить на английском с первого занятия</p>
 
@@ -554,7 +554,7 @@
 
             <section id="signup" class="section">
                 <div class="container">
-                    <h2 class="title">Регистрация на бесплатный урок</h2>
+                    <h2 class="title">Регистрация на бесплатный пробный урок</h2>
 
                     <p class="subtitle">Оставьте заявку до конца дня <?= date("d.m") ?>, и вы получите инструкцию от коуча по произношению<br><span class="has-text-danger has-text-weight-bold">«Как быстро начать понимать речь носителя»</span><br>в подарок!</p>
                     
