@@ -514,19 +514,6 @@
                     <div class="media">
                         <div class="media-left">
                             <span class="icon is-large">
-                                <i class="fa fa-subway" style="color: saddlebrown"></i>
-                            </span>
-                        </div>
-
-                        <div class="media-content">
-                            <p><strong>м. Белорусская (5 мин.)</strong></p>
-                            <p>ул. Большая Грузинская, д. 61c1</p>
-                        </div>
-                    </div>
-                    
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="icon is-large">
                                 <img src="https://static.sayes.ru/images/icons/brands/skype.png" alt="логотип skype">
                             </span>
                         </div>
